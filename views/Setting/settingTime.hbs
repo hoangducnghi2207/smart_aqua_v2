@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting Time</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/stylesheets/tab-bar.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker-standalone.css" />
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    {{>header}}
+    <table class="table table-striped-columns">
+      <thead>
+        <tr class="table-primary">
+          <th colspan="4" style="margin: 50px; ;text-align: center; font-size:xx-large; color: rgb(255, 152, 33);"> Hẹn giờ thiết bị </th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <td>
+            <br>
+            <h4>Máy Bơm Nước </h4>
+          </td>
+          <td>
+            <br>
+            <input id="btn_bomnuoc" type="checkbox"  data-toggle="toggle" data-width="100">
+          </td>
+          <td>Thời gian bật<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker1_on">
+                <input class="form-control"  id="bom_startTime" type="text">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>Thời gian tắt<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker1_off">
+                <input class="form-control"  type="text" id="bom_stopTime"><span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="settingTime(1)">Set</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <h4>Máy Bơm OXI</h4>
+          </td>
+          <td>
+            <br>
+            <input id="btn_oxi" type="checkbox"  data-toggle="toggle" data-width="100">
+          </td>
+          <td>Thời gian bật<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker2_on">
+                <input class="form-control"  type="text" id="oxi_startTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>Thời gian tắt<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker2_off">
+                <input class="form-control"  type="text" id="oxi_stopTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="settingTime(2)">Set</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <h4>Máy Lọc Nước</h4>
+          </td>
+          <td>
+            <br>
+            <input id="btn_locnuoc" type="checkbox"  data-toggle="toggle" data-width="100">
+          </td>
+          <td>Thời gian bật<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker3_on">
+                <input class="form-control"  type="text" id="loc_startTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>Thời gian tắt<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker3_off">
+                <input class="form-control"  type="text" id="loc_stopTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="settingTime(3)">Set</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <h4>Sò Làm Mát Máy</h4>
+          </td>
+          <td>
+            <br>
+            <input id="btn_So" type="checkbox"  data-toggle="toggle" data-width="100">
+          </td>
+          <td>Thời gian bật<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker4_on">
+                <input class="form-control"  type="text" id="so_startTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>Thời gian tắt<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker4_off">
+                <input class="form-control"  type="text" id="so_stopTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="settingTime(4)">Set</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <h4>Máy Sưởi Bể Cá</h4>
+          </td>
+          <td>
+            <br>
+            <input id="btn_maysuoi" type="checkbox"  data-toggle="toggle" data-width="100">
+          </td>
+          <td>Thời gian bật<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker5_on">
+                <input class="form-control"  type="text" id="maysuoi_startTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>Thời gian tắt<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker5_off">
+                <input class="form-control"  type="text" id="maysuoi_stopTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="settingTime(5)">Set</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <h4>Điều Khiển Tự Động</h4>
+          </td>
+          <td>
+            <br>
+            <input id="btn_auto" type="checkbox"  data-toggle="toggle" data-width="100">
+          </td>
+          <td>Thời gian bật<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepickerAuto_on">
+                <input class="form-control"  type="text" id="auto_startTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>Thời gian tắt<br>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepickerAuto_off">
+                <input class="form-control"  type="text" id="auto_stopTime">
+                <span class="input-group-addon"><span
+                    class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="settingTime(6)">Set</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="/js/settingtime_view.js"></script>
+</body>
+
+</html>

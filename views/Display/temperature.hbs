@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{!-- <link rel="stylesheet" href="/stylesheets/style2.css"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/tab-bar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/style2.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Viewer</title>
+</head>
+<body>
+   
+  <div class="container">
+    {{>header}}
+    <div class="weather">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- partial:index.partial.html -->
+          <article class="box weather">
+            <div class="icon bubble black">
+              <div class="spin">
+                <img src="https://img.icons8.com/emoji/96/000000/sun-emoji.png">
+              </div>
+            </div>
+            
+            <h1>Nhiệt độ</h1>
+            <span class="temp" id="s_temp">23&deg;C</span>
+          </article>
+          <!-- partial -->
+        </div>
+        <div class="col-md-6">
+          <!-- partial:index.partial.html -->
+          <article class="box weather">
+            <div class="icon bubble black">
+              <div class="spin">
+                <img src="images/ph.png">
+              </div>
+            </div>
+            
+            <h1>Độ pH</h1>
+            <span class="temp" id="s_ph">23</span>
+
+          </article>
+          <!-- partial -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- partial:index.partial.html -->
+          <article class="box weather">
+            <div class="icon bubble black">
+              <div class="spin">
+                <img src="images/oxi.png">
+              </div>
+            </div>
+            
+            <h1>Độ oxi hòa tan</h1>
+            <span class="temp" id="s_oxi">23 %</span>
+
+          </article>
+          <!-- partial -->
+        </div>
+        <div class="col-md-6">
+          <!-- partial:index.partial.html -->
+          <article class="box weather">
+            <div class="icon bubble black">
+              <div class="spin">
+                <img src="images/opaque.png">
+              </div>
+            </div>
+            
+            <h1>Độ đục</h1>
+            <span class="temp" id="s_duc">23 %</span>
+
+          </article>
+          <!-- partial -->
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+  
+//=============================//====================================//
+//      Feature                                            Status
+//-------------------------------------------------------------------//
+// Load setting time form database to front_end     :       Yes
+//=============================//====================================//
+
+let _temp = document.getElementById('s_temp');
+let _ph  = document.getElementById("s_ph");
+let _oxi = document.getElementById('s_oxi');
+let _duc  = document.getElementById("s_duc");
+
+//const socket = io();
+
+//socket.on("connect", () => {
+//  console.log("Socket IO: ",socket.id); 
+//});
+
+
+window.onload = function loadTimeConfig() {
+    console.log("load Time Config ");
+    loadingData();
+    
+}
+
+function loadingData(){
+  const url = '/display/loadData';
+    fetch(url).then((response) => {
+        console.log("Get local config");
+        response.json().then((data) => {
+            if (data.error) {
+                console.log("Data error: ", data.error);
+            } else {
+                console.log("Data: ", data);
+                parserData(data);
+            }
+        })
+    })
+}
+
+setInterval(loadingData, 5000);
+
+function parserData(data){
+  _temp.textContent = data.temp +"°C";
+  _ph.textContent =  data.ph ;
+  _oxi.textContent = data.oxi +"%";
+  _duc.textContent = data.duc +"%";
+}
+</script>
+</body>
+
+</html>

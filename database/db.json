@@ -1,0 +1,184 @@
+{
+  "deviceStatus": [
+    {
+      "id": "maybom",
+      "value": false
+    },
+    {
+      "id": "bomoxi",
+      "value": false
+    },
+    {
+      "id": "locnuoc",
+      "value": false
+    },
+    {
+      "id": "sononglanh",
+      "value": false
+    },
+    {
+      "id": "maysuoi",
+      "value": false
+    },
+    {
+      "id": "auto",
+      "value": false
+    },
+    {
+      "id": "e_auto",
+      "value": true
+    }
+  ],
+  "deviceRanger": [
+    {
+      "id": "oxiRangeMax",
+      "value": "10"
+    },
+    {
+      "id": "pHRangeMax",
+      "value": "14"
+    },
+    {
+      "id": "tempRangeMin",
+      "value": "100"
+    },
+    {
+      "id": "oxiRangeMin",
+      "value": "11"
+    },
+    {
+      "id": "pHRangeMin",
+      "value": "15"
+    },
+    {
+      "id": "tempRangeMax",
+      "value": "125"
+    },
+    {
+      "id": "ducRangeMax",
+      "value": "12"
+    }
+  ],
+  "users": [
+    {
+      "username": "Đỗ Xuân Tuấn",
+      "email": "xuantuanncth@gmail.com",
+      "password": "123",
+      "confirm_password": "123"
+    }
+  ],
+  "settingTime": [
+    {
+      "id": "maybom",
+      "start": "13:52",
+      "stop": "09:52"
+    },
+    {
+      "id": "bom",
+      "start": "07/23/2022 4:04 PM",
+      "stop": "07/23/2022 4:04 PM"
+    },
+    {
+      "id": "locnuoc",
+      "start": "08:04",
+      "stop": "07:04"
+    },
+    {
+      "id": "sononglanh",
+      "start": "10:04",
+      "stop": "07:03"
+    },
+    {
+      "id": "maysuoi",
+      "start": "10:04",
+      "stop": "07:01"
+    },
+    {
+      "id": "auto",
+      "start": "07:08",
+      "stop": "06:04"
+    },
+    {
+      "id": "bomoxi",
+      "start": "07:46",
+      "stop": "07:46"
+    }
+  ],
+  "dataSensor": [
+    {
+      "date": "24/7/2022",
+      "day": "Tue",
+      "data": [
+        {
+          "hour": "3h",
+          "value": {
+            "temp": "26",
+            "oxi": "12",
+            "pH": "10",
+            "duc": "6"
+          }
+        },
+        {
+          "hour": "6h",
+          "value": {
+            "temp": "27",
+            "oxi": "13",
+            "pH": "9",
+            "duc": "7"
+          }
+        },
+        {
+          "hour": "9h",
+          "value": {
+            "temp": "28",
+            "oxi": "14",
+            "pH": "8",
+            "duc": "8"
+          }
+        },
+        {
+          "hour": "0h",
+          "value": {
+            "temp": "28",
+            "oxi": "14",
+            "pH": "8",
+            "duc": "8"
+          }
+        },
+        {
+          "hour": "12h",
+          "value": {
+            "temp": "28",
+            "oxi": "14",
+            "pH": "8",
+            "duc": "8"
+          }
+        }
+      ]
+    },
+    {
+      "date": "25/7/2022",
+      "day": "Tue",
+      "data": [
+        {
+          "hour": "12h",
+          "value": {
+            "temp": "28",
+            "oxi": "14",
+            "pH": "8",
+            "duc": "8"
+          }
+        },
+        {
+          "hour": "12h",
+          "value": {
+            "temp": "28",
+            "oxi": "14",
+            "pH": "8",
+            "duc": "8"
+          }
+        }
+      ]
+    }
+  ]
+}
