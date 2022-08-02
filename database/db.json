@@ -2,23 +2,23 @@
   "deviceStatus": [
     {
       "id": "maybom",
-      "value": false
+      "value": true
     },
     {
       "id": "bomoxi",
-      "value": false
+      "value": true
     },
     {
       "id": "locnuoc",
-      "value": false
+      "value": true
     },
     {
       "id": "sononglanh",
-      "value": false
+      "value": true
     },
     {
       "id": "maysuoi",
-      "value": false
+      "value": true
     },
     {
       "id": "auto",
