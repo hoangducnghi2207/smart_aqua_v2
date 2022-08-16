@@ -2,23 +2,23 @@
   "deviceStatus": [
     {
       "id": "maybom",
-      "value": true
+      "value": false
     },
     {
       "id": "bomoxi",
-      "value": true
+      "value": false
     },
     {
       "id": "locnuoc",
-      "value": true
+      "value": false
     },
     {
       "id": "sononglanh",
-      "value": true
+      "value": false
     },
     {
       "id": "maysuoi",
-      "value": true
+      "value": false
     },
     {
       "id": "auto",
@@ -32,7 +32,7 @@
   "deviceRanger": [
     {
       "id": "oxiRangeMax",
-      "value": "8.0"
+      "value": "9.0"
     },
     {
       "id": "pHRangeMax",
@@ -40,23 +40,23 @@
     },
     {
       "id": "tempRangeMin",
-      "value": "35"
+      "value": "30"
     },
     {
       "id": "oxiRangeMin",
-      "value": "7.0"
+      "value": "1.0"
     },
     {
       "id": "pHRangeMin",
-      "value": "8.0"
+      "value": "1.0"
     },
     {
       "id": "tempRangeMax",
-      "value": "38"
+      "value": "33"
     },
     {
       "id": "ducRangeMax",
-      "value": "30"
+      "value": "35"
     }
   ],
   "users": [
@@ -70,8 +70,8 @@
   "settingTime": [
     {
       "id": "maybom",
-      "start": "13:53",
-      "stop": "13:55"
+      "start": "11:18",
+      "stop": "11:20"
     },
     {
       "id": "bom",
@@ -80,18 +80,18 @@
     },
     {
       "id": "locnuoc",
-      "start": "13:53",
-      "stop": "13:55"
+      "start": "11:18",
+      "stop": "11:20"
     },
     {
       "id": "sononglanh",
-      "start": "13:53",
-      "stop": "13:55"
+      "start": "11:18",
+      "stop": "11:20"
     },
     {
       "id": "maysuoi",
-      "start": "13:53",
-      "stop": "13:55"
+      "start": "11:18",
+      "stop": "11:20"
     },
     {
       "id": "auto",
@@ -100,8 +100,8 @@
     },
     {
       "id": "bomoxi",
-      "start": "13:53",
-      "stop": "13:55"
+      "start": "11:18",
+      "stop": "11:20"
     }
   ],
   "dataSensor": [
@@ -649,6 +649,69 @@
             "temp": "33",
             "oxi": "4.6",
             "pH": "7.3",
+            "duc": "29"
+          }
+        },
+        {
+          "hour": "18h",
+          "value": {
+            "temp": "33",
+            "oxi": "4.6",
+            "pH": "7.3",
+            "duc": "23"
+          }
+        },
+        {
+          "hour": "18h",
+          "value": {
+            "temp": "33",
+            "oxi": "4.6",
+            "pH": "8.0",
+            "duc": "23"
+          }
+        }
+      ]
+    },
+    {
+      "date": "4/8/2022",
+      "day": "Thu",
+      "data": [
+        {
+          "hour": "9h",
+          "value": {
+            "temp": "33",
+            "oxi": "4.7",
+            "pH": "8.0",
+            "duc": "29"
+          }
+        }
+      ]
+    },
+    {
+      "date": "8/8/2022",
+      "day": "Mon",
+      "data": [
+        {
+          "hour": "9h",
+          "value": {
+            "temp": "31",
+            "oxi": "4.7",
+            "pH": "8.0",
+            "duc": "29"
+          }
+        }
+      ]
+    },
+    {
+      "date": "14/8/2022",
+      "day": "Sun",
+      "data": [
+        {
+          "hour": "18h",
+          "value": {
+            "temp": "29",
+            "oxi": "4.4",
+            "pH": "8.0",
             "duc": "29"
           }
         }
