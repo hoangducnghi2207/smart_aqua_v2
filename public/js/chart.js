@@ -148,8 +148,8 @@ let w_data = {
     }, {
         label: 'Độ Đục',
         data: w_dataSensor,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(185, 254, 138, 1)',
+        borderColor: 'rgba(185, 254, 138, 1)',
         borderWidth: 1,
         tension: 0.4,
         parsing: {
@@ -195,8 +195,8 @@ let s_data = {
     }, {
         label: 'Độ Đục',
         data: d_dataSensor,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(172, 254, 138, 1))',
+        borderColor: 'rgba(7172, 254, 138, 1))',
         borderWidth: 1,
         tension: 0.4,
         parsing: {
